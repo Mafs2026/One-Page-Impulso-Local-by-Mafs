@@ -1,8 +1,13 @@
+/* --- RESETEO GENERAL --- */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
@@ -11,110 +16,205 @@ body {
   background-color: #ffffff;
 }
 
-/* MENÚ SUPERIOR (Fijo sin encimarse) */
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* --- ENCABEZADO Y MENÚ --- */
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   background-color: #ffffff;
-  padding: 15px 5%;
+  padding: 18px 8%;
   position: sticky;
   top: 0;
   z-index: 1000;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
 }
 
 .logo a {
   font-weight: 700;
-  font-size: 1.2rem;
-  color: #d86b93;
+  font-size: 1.25rem;
+  color: #c8527a;
   text-decoration: none;
   white-space: nowrap;
+}
+
+.logo a span {
+  font-weight: 400;
+  color: #666;
+  font-size: 1.1rem;
 }
 
 .nav-links {
   display: flex;
   list-style: none;
-  gap: 20px;
+  gap: 25px;
 }
 
 .nav-links a {
   text-decoration: none;
   color: #444444;
   font-weight: 500;
-  transition: color 0.2s;
+  font-size: 0.95rem;
+  transition: color 0.2s ease;
 }
 
 .nav-links a:hover {
-  color: #d86b93;
+  color: #c8527a;
 }
 
-/* BOTONES */
+/* --- BOTONES --- */
 .btn-primary {
   display: inline-block;
-  background-color: #d86b93;
+  background-color: #c8527a;
   color: #ffffff;
   padding: 12px 28px;
-  border-radius: 25px;
+  border-radius: 30px;
   text-decoration: none;
   font-weight: 600;
-  margin-top: 20px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .btn-primary:hover {
-  background-color: #c2537b;
+  background-color: #a83d62;
+  transform: translateY(-2px);
 }
 
-/* SECCIONES */
+.btn-secondary {
+  display: inline-block;
+  background-color: transparent;
+  color: #c8527a;
+  border: 2px solid #c8527a;
+  padding: 10px 24px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  margin-left: 10px;
+  transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+  background-color: #fdf0f4;
+}
+
+/* --- SECCIONES --- */
 .section {
-  padding: 60px 10%;
+  padding: 70px 8%;
   text-align: center;
 }
 
 .bg-light {
-  background-color: #f9f9f9;
+  background-color: #fcf8f9;
 }
 
+.subtitle {
+  color: #c8527a;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  display: block;
+  margin-bottom: 8px;
+}
+
+h2 {
+  font-size: 2rem;
+  color: #1a1a1a;
+  margin-bottom: 20px;
+}
+
+/* --- HERO (INICIO) --- */
 .hero {
-  padding: 80px 10%;
-  max-width: 800px;
+  padding: 90px 8% 70px;
+  text-align: left;
+  max-width: 850px;
+}
+
+.badge {
+  background-color: #fdf0f4;
+  color: #c8527a;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  display: inline-block;
+  margin-bottom: 15px;
 }
 
 .hero h1 {
-  font-size: 2.5rem;
-  margin-bottom: 15px;
+  font-size: 2.8rem;
   color: #111111;
+  line-height: 1.2;
+  margin-bottom: 15px;
 }
 
-/* SERVICIOS */
+.hero p {
+  font-size: 1.1rem;
+  color: #555555;
+  margin-bottom: 25px;
+  max-width: 650px;
+}
+
+/* --- SOBRE MÍ --- */
+.about-text {
+  font-size: 1.05rem;
+  color: #555;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.8;
+}
+
+/* --- SERVICIOS (TARJETAS) --- */
 .services-grid {
   display: flex;
-  gap: 20px;
+  gap: 25px;
   justify-content: center;
-  margin-top: 30px;
+  margin-top: 35px;
   flex-wrap: wrap;
 }
 
 .card {
   background: #ffffff;
-  padding: 25px;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  padding: 30px 25px;
+  border-radius: 16px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+  border: 1px solid #f0f0f0;
   flex: 1;
-  min-width: 250px;
-  max-width: 320px;
+  min-width: 260px;
+  max-width: 310px;
   text-align: left;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card .icon {
+  font-size: 2rem;
+  margin-bottom: 15px;
 }
 
 .card h3 {
+  font-size: 1.2rem;
+  color: #1a1a1a;
   margin-bottom: 10px;
-  color: #d86b93;
 }
 
+.card p {
+  font-size: 0.95rem;
+  color: #666;
+}
+
+/* --- FOOTER --- */
 footer {
   text-align: center;
-  padding: 25px;
-  background: #f4f4f4;
+  padding: 30px;
+  background: #fafafa;
+  border-top: 1px solid #eeeeee;
   font-size: 0.85rem;
-  color: #777;
+  color: #888888;
 }
